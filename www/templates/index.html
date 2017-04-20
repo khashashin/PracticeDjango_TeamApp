@@ -1,15 +1,25 @@
+{% load static %}
+
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-  <title>Document</title>
+    <!-- <link rel="stylesheet" href="{% static 'bootstrap.min.css' %}"></link> -->
+    <link rel="stylesheet" href="{% static 'main.css' %}"></link>
+    <title>Document</title>
 </head>
+
 <body>
-  <h1>Some Text</h1>
-  {% for person in people %}
-    <img src="{{ person.image }}" alt="" />
-    <p>{{ person.name }}</p>
-    <p>{{ person.title }}</p>
-    <p>{{ person.email }}</p>
-  {% endfor %}
+  <div style="text-align: center; padding: 0; margin 0">
+    {% for person in people %}
+      <div style="width: 350px; display: inline-block; margin: 0 10px 30px 10px">
+        <img src="{{ person.image }}" alt="" />
+        <h2>{{ person.name }}</h2>
+        <p class="person-title">{{ person.title }}</p>
+        <p class="person-email">{{ person.email }}</p>
+      </div>
+    {% endfor %}
+  </div>
 </body>
+
 </html>
